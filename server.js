@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(validator());
 
 app.use(session({
-    secret: 'Thisismytestkey',
+    secret: process.env.APP_SECRET,
     resave: false,
     saveUninitialized: false,
     store: new MongoStore({mongooseConnection: mongoose.connection})

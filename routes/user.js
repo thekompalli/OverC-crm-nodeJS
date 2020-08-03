@@ -109,7 +109,7 @@ module.exports = (app, passport) => {
                     subject: 'OverC Application Password Reset Token',
                     text: 'You have requested for password reset token. \n\n'+
                         'Please click on the link to complete the process: \n\n'+
-                        'http://localhost:3000/reset/'+rand+'\n\n'
+                        'https://overc.herokuapp.com/reset/'+rand+'\n\n'
                 };
                 
                 smtpTransport.sendMail(mailOptions, (err, response) => {

@@ -5,10 +5,10 @@ module.exports = {
     },
     
     facebook: {
-        clientID: FB_ID, //Facebook login app id
-        clientSecret: FB_SECRET, //Facebook login secret key
+        clientID: process.env.FB_ID, //Facebook login app id
+        clientSecret: process.env.FB_SECRET, //Facebook login secret key
         profileFields: ['email', 'displayName'],
-        callbackURL: 'http://localhost:3000/auth/facebook/callback',
+        callbackURL: 'https://overc.herokuapp.com/auth/facebook/callback',
         passReqToCallback: true
     }
 }
