@@ -1,0 +1,43 @@
+<% layout('layout2') %>
+
+
+<div id="wrapper">
+
+    <% include ../partials/sidebar %>
+
+    <div id="page-content-wrapper">
+        <% include ../partials/navbar %>
+        <div class="container-fluid main_body">
+			<div class="ul_links">
+	            <ul>
+	                <li><a href="/">Home</a></li> |
+	                <li><a href="/companies">Manager</a></li> |
+	                <li><a href="#">Register user</a></li>
+	            </ul>
+	        </div>
+
+            <div class="bodyDiv">
+				<h4 style="">Register User</h4>
+
+	            <div class="form-group">
+					<label for="">Manager: </label>&nbsp;
+					
+	                <label style="text-transform: capitalize;"><%= data.name %></label>
+	            </div>
+
+	            <form action="" method="post">
+	                <div class="form-group ">
+	                    <label for="">Role</label>
+	                    <input id="role" class="form-control" name="role" type="text" style="margin-bottom:20px;" placeholder="eg: Developer">
+	                </div>
+
+	                <div class="form-group">
+	                    <input type="submit" id="role" value="Register" class="form-control btn btn-primary" name="employeeRole" style="">
+	                </div>
+	            </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
