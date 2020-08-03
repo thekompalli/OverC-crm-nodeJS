@@ -5,6 +5,7 @@ var async = require('async');
 
 var Company = require('../models/company');
 var User = require('../models/user');
+var faker = require('faker');
 
 var {arrayAverage} = require('../myFunctions');
 
@@ -68,7 +69,7 @@ module.exports = (app) => {
     
     app.get('/companies', (req, res) => {
         Company.find({}, (err, result) => {
-            res.render('company/companies', {title: 'All Companies || RateMe', user: req.user, data: result});
+            res.render('company/companies', {title: 'All Companies || RateMe', user: req.user, data: result, src:faker.image.avatar()});
         });
     });
     
@@ -76,13 +77,13 @@ module.exports = (app) => {
         Company.findOne({'_id':req.params.id}, (err, data) => {
             var avg = arrayAverage(data.ratingNumber);
             
-            res.render('company/company-profile', {title: 'Company Name', user:req.user, id: req.params.id, data:data, average: avg});
+            res.render('company/company-profile', {title: 'Company Name', user:req.user, id: req.params.id, data:data, average: avg, src:faker.image.avatar()});
         });
     });
     
     app.get('/company/register-employee/:id', (req, res) => {
         Company.findOne({'_id':req.params.id}, (err, data) => {
-            res.render('company/register-employee', {title: 'Register Employee', user:req.user, data: data});
+            res.render('company/register-employee', {title: 'Register Employee', user:req.user, data: data, src:faker.image.avatar()});
         });
     });
     
@@ -129,13 +130,13 @@ module.exports = (app) => {
     
     app.get('/:name/employees', (req, res) => {
         Company.findOne({'name':req.params.name}, (err, data) => {
-            res.render('company/employees', {title: 'Company EMployees', user: req.user, data: data});
+            res.render('company/employees', {title: 'Company EMployees', user: req.user, data: data, src:faker.image.avatar()});
         });
     });
     
     app.get('/companies/leaderboard', (req, res) => {
         Company.find({}, (err, result) => {
-            res.render('company/leaderboard', {title: 'Companies Leadebaord || RateMe', user: req.user, data: result});
+            res.render('company/leaderboard', {title: 'Companies Leadebaord || RateMe', user: req.user, data: result, src:faker.image.avatar()});
         }).sort({'ratingSum': -1});
     });
     

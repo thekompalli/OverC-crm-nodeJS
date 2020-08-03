@@ -6,6 +6,7 @@ var crypto = require('crypto');
 var User = require('../models/user');
 var Company = require('../models/company');
 var secret = require('../secret/secret');
+var faker = require('faker');
 
 module.exports = (app, passport) => {
 
@@ -15,7 +16,7 @@ module.exports = (app, passport) => {
             res.redirect('/home');
         }else{
             Company.find({}, (err, result) => {
-                res.render('index', {title: 'Index || RateMe', data:result});
+                res.render('index', {title: 'Index || RateMe', data:result, src:faker.image.avatar()});
             });
         }
     });

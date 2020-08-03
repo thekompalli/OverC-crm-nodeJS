@@ -4,7 +4,7 @@
 
     <div id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="/">OverC</a>
+            <strong><a href="/"> <span style="color: rgb(241, 183, 75);">Over</span><span style="color: dodgerblue;">C</span></a></strong>
         </div>
 
         <ul class="sidebar-nav">
@@ -48,7 +48,7 @@
                     
 				    <div class="col-xs-12 col-md-6 col-lg-4 companyListDiv">
                         <a href="/login">
-                            <img src="/uploads/<%= data[i].image %>" class="companyListItemLogo" alt="No image available">
+                            <img src="<%= src %>" class="companyListItemLogo" alt="No image available" id="profile">
 
                             <div class="companyListItemInfo">
                                 <h5 class=""><%= data[i].name %></h5>
@@ -69,7 +69,6 @@
     </div>
 
 </div>
-    
     
 
 
